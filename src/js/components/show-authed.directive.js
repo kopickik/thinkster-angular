@@ -14,9 +14,8 @@ function ShowAuthed(User) {
             } else {
               element.css({ display: 'none'})
             }
-
-          // no user detected
           } else {
+            // no user detected
             if (attrs.showAuthed === 'true') {
               element.css({ display: 'none'})
             } else {
