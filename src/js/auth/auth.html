@@ -15,14 +15,16 @@
                     </a>
                 </p>
 
+                <list-errors errors="$ctrl.errors"></list-errors>
+
                 <form ng-submit="$ctrl.submitForm()">
                     <fieldset ng-disabled="$ctrl.isSubmitting">
                         <fieldset class="form-group" ng-show="$ctrl.authType === 'register'">
-                            <input type="text" class="form-control form-control-lg" placeholder="Username" ng-model="$ctrl.formData.userName">
+                            <input type="text" class="form-control form-control-lg" placeholder="Username" ng-model="$ctrl.formData.username">
                         </fieldset>
 
                        <fieldset class="form-group">
-                            <input type="email" class="form-control form-control-lg" placeholder="Email" ng-model="$ctrl.formData.userEmail">
+                            <input type="email" class="form-control form-control-lg" placeholder="Email" ng-model="$ctrl.formData.email">
                         </fieldset>
 
                         <fieldset class="form-group">
