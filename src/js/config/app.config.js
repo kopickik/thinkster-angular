@@ -1,7 +1,7 @@
-import authInterceptor from './auth.interceptor';
-
 function AppConfig($httpProvider, $stateProvider, $locationProvider, $urlRouterProvider) {
   'ngInject';
+
+  $httpProvider.interceptors.push(authInterceptor);
 
   /*
     If you don't want hashbang routing, uncomment this line.
@@ -9,15 +9,12 @@ function AppConfig($httpProvider, $stateProvider, $locationProvider, $urlRouterP
   */
   // $locationProvider.html5Mode(true);
 
-  // Push our auth interceptor
-  $httpProvider.interceptors.push(authInterceptor);
-
   $stateProvider
   .state('app', {
     abstract: true,
     templateUrl: 'layout/app-view.html',
     resolve: {
-      auth: function (User) {
+      auth: function(User) {
         return User.verifyAuth();
       }
     }
